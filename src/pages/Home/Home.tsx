@@ -1,42 +1,46 @@
 import React, {useEffect, useState} from 'react'
-import { getSearch } from "services";
+import { getAll } from "services";
 import { BookCard } from "components/BookCard";
 import { Stack } from "@mui/material";
-import { useParams } from 'react-router-dom';
 
-
-const Home = () => {
-    const { search } = useParams();
+const Horror = () => {
     const [books, setBooks] = useState<any[]>([]);
-    const [filteredMovies, setFilteredMovies] = useState<any[]>([]);
+    const [filteredBooks, setFilteredBooks] = useState<any[]>([]);
     const [value, setValue] = React.useState<number>(0);
+
 
     useEffect(  () => {
         if (value === 0) {
-
-            // getSearch(search)
-            //     .then(response => {
-            //         response.data && setBooks(response.data.results)
-            //     })
-            //     .catch(err => console.log(err));
+            getAll()
+                .then(response => {
+                    //console.log(response.items.map((item: any) => item.volumeInfo))
+                    response.items && setBooks(response.items)
+                })
+                .catch(err => console.log(err));
         }
 
     }, [books, value]);
 
-    const booksToShow = value === 0 ? books : filteredMovies;
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const value = (event.target as HTMLInputElement).value;
+        setValue(parseInt(value));
+    };
+
+    const booksToShow = value === 0 ? books : filteredBooks;
+    booksToShow && booksToShow.map((book) => console.log(book.volumeInfo.imageLinks.thumbnail))
 
     return (
         <Stack alignItems="center">
             <Stack width="80%">
-                <h1>Home</h1>
+                <h1>Todo</h1>
             </Stack>
             <Stack direction="row" justifyContent="center" flexWrap="wrap">
                 {booksToShow && booksToShow.map((book) => (
                     <BookCard
                         id={book.id}
-                        title={book.title}
+                        title={book.volumeInfo.title}
                         authors={book.authors}
-                        thumbnail={book.thumbnail}
+                        thumbnail={book.volumeInfo.imageLinks.thumbnail}
                     />
                 ))}
             </Stack>
@@ -44,4 +48,4 @@ const Home = () => {
     )
 }
 
-export default Home;
+export default Horror;
