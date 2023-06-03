@@ -78,7 +78,7 @@ export const ShowLabelTitle = styled.p`
   margin-top: 10px;
 `;
 
-export const ShowCalification = styled.p`
+export const ShowAuthor = styled.p`
   margin-right: 10px;
   text-shadow: none;
   color: #fff;
@@ -88,23 +88,3 @@ export const ShowCalification = styled.p`
   text-transform: uppercase;
   line-height: 4px;
 `;
-
-
-export const SkeletonContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-
-  div:first-child {
-    height: 60vh;
-    flex-grow: 2;
-  }
-
-  div:nth-child(2) {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    flex-grow: 3;
-  }
-`

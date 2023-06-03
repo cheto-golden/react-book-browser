@@ -1,1 +1,1 @@
-export { default as BookCard } from "./MovieCard";
+export { default as BookCard } from "./BookCard";

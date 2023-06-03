@@ -1,58 +1,37 @@
 import React from "react";
-import { IMAGE_SOURCE } from "constants/moviesMock";
-import genres from "constants/genres.json";
-import { MovieCardProp } from "./types";
+import { BookCardProp } from "./types";
 import {
     ImageContainer,
     InfoShow,
     ShowBox,
-    ShowCalification,
+    ShowAuthor,
     ShowLabelTitle,
     ShowThumb,
     ShowTitle,
 } from "./styles";
 import { useNavigate } from "react-router-dom";
 
-const MovieCard: React.FC<MovieCardProp> = ({
-                                                path,
-                                                title,
-                                                voteAverage,
-                                                genreId,
-                                                movieId
+const BookCard: React.FC<BookCardProp> = ({
+                                               id,
+                                               title,
+                                               authors,
+                                               thumbnail
                                             }) => {
-    const poster = IMAGE_SOURCE + path;
     const navigate = useNavigate();
-    const getGenre = (genreId: number) => {
-        const key: any = Object.keys(genres.genres).find(
-            (genre: any): boolean => genres.genres[genre].id === genreId
-        );
-        if (key) {
-            return genres.genres[key].name;
-        }
-        return "Not Classified";
-    };
-
-    const getColor = (rating: number) => {
-        if(rating >= 8){
-            return '#007f4f';
-        } else if (rating >= 7){
-            return '#005b4e';
-        }
-    }
 
     return (
-        <ShowBox onClick={() => navigate(`/detail/${movieId}`)}>
+        <ShowBox onClick={() => navigate(`/detail/${id}`)}>
             <ImageContainer>
-                <ShowThumb src={poster} />
+                <ShowThumb src={thumbnail} />
             </ImageContainer>
             <InfoShow>
                 <ShowTitle>
                     <ShowLabelTitle>{title}</ShowLabelTitle>
-                    <ShowCalification>* {voteAverage} / 10</ShowCalification>
+                    <ShowAuthor>{authors}</ShowAuthor>
                 </ShowTitle>
             </InfoShow>
         </ShowBox>
     );
 };
 
-export default MovieCard;
+export default BookCard;

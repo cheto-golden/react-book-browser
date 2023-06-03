@@ -1,4 +1,4 @@
-import {getSearch} from "./books/getSearch";
-import {getHorrorBooks} from "./books/getHorrorBooks";
-import {getRomanceBooks} from "./books/getRomanceBooks";
-import {getJuvenileBooks} from "./books/getJuvenileBooks";
+export { getSearch } from "./books/getSearch";
+export { getHorrorBooks } from "./books/getHorrorBooks";
+export { getRomanceBooks } from "./books/getRomanceBooks";
+export { getJuvenileBooks } from "./books/getJuvenileBooks";

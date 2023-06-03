@@ -15,7 +15,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { BoxStyled } from "./styles";
 import { Link } from "react-router-dom";
-//import { ROUTES } from "routes/constants";
+import { ROUTES } from "routes/constants";
 
 interface Props {
     /**
@@ -28,10 +28,9 @@ interface Props {
 const drawerWidth = 240;
 const navItems = [
     {id: 1, name: "HOME", path: ROUTES.HOME},
-    {id: 2, name: "POPULAR", path: ROUTES.POPULAR},
-    {id: 3, name: "TOP RATED", path: ROUTES.TOP_RATED},
-    {id: 4, name: "NOW PLAYING", path: ROUTES.NOW_PLAYING},
-    {id: 5, name: "FAVORITES", path: ROUTES.MY_FAVORITES},
+    {id: 2, name: "TERROR", path: ROUTES.HORROR},
+    {id: 3, name: "JUVENIL", path: ROUTES.JUVENILE},
+    {id: 4, name: "ROMANCE", path: ROUTES.ROMANCE},
 ];
 
 export default function Header(props: Props) {

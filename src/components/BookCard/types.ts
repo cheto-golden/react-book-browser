@@ -1,8 +1,7 @@
-export interface MovieCardProp {
-    path: string;
+export interface BookCardProp {
+    id: string;
     title: string;
-    voteAverage: number;
-    genreId: number;
-    movieId: number;
+    authors: number;
+    thumbnail: string;
     onClick?: () => void;
 }

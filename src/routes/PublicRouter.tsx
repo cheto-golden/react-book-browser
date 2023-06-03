@@ -1,13 +1,14 @@
 import * as React from 'react'
 import { Outlet } from 'react-router-dom'
+import { Header } from 'components/Header'
 
 const PublicRouter = () => {
     return (
         <>
-            <div>Public router</div>
+            <Header />
             <Outlet />
         </>
     )
 }
 
-export default PublicRouter
+export default PublicRouter;
