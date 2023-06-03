@@ -3,4 +3,5 @@ export const ROUTES = {
     HORROR: '/horror',
     JUVENILE: '/juvenile',
     ROMANCE: '/romance',
+    DETAIL: '/detail/:bookId',
 };

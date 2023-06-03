@@ -26,7 +26,7 @@ const Horror = () => {
     };
 
     const booksToShow = value === 0 ? books : filteredBooks;
-    booksToShow && booksToShow.map((book) => console.log(book.volumeInfo.imageLinks.thumbnail))
+    //booksToShow && booksToShow.map((book) => console.log(book.volumeInfo.imageLinks.thumbnail))
 
     return (
         <Stack alignItems="center">

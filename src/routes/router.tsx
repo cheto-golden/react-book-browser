@@ -1,6 +1,6 @@
 import { RouteObject, createBrowserRouter }  from "react-router-dom";
 import PublicRouter from "./PublicRouter";
-import { Home, Horror, Juvenile, Romance } from "pages";
+import { Home, Horror, Juvenile, Romance, BookDetail } from "pages";
 import { ROUTES } from "./constants";
 
 const routes: RouteObject[] = [
@@ -11,6 +11,7 @@ const routes: RouteObject[] = [
             { path: ROUTES.HORROR, element: <Horror/> },
             { path: ROUTES.JUVENILE, element: <Juvenile/> },
             { path: ROUTES.ROMANCE, element: <Romance/> },
+            { path: ROUTES.DETAIL, element: <BookDetail/>}
         ]
     }
 ];
