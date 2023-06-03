@@ -1,6 +1,6 @@
 export const ROUTES = {
     HOME: '/',
-    TERROR: '/terror',
-    JUVENIL: '/juvenil',
+    HORROR: '/horror',
+    JUVENILE: '/juvenile',
     ROMANCE: '/romance',
 };
