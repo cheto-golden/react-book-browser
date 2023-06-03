@@ -81,7 +81,7 @@ export default function Header(props: Props) {
                         component="div"
                         sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
                     >
-                        My movies DB
+                        Books Library
                     </Typography>
                     <Box sx={{ display: { xs: "none", sm: "block" } }}>
                         {navItems.map((item) => (

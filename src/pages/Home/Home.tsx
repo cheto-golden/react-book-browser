@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import { getAll } from "services";
+import {getAll, getHorrorBooks, getJuvenileBooks} from "services";
 import { BookCard } from "components/BookCard";
 import { Stack } from "@mui/material";
 
@@ -11,7 +11,7 @@ const Horror = () => {
 
     useEffect(  () => {
         if (value === 0) {
-            getAll()
+            getHorrorBooks()
                 .then(response => {
                     //console.log(response.items.map((item: any) => item.volumeInfo))
                     response.items && setBooks(response.items)
