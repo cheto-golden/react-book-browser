@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import {getAll, getHorrorBooks, getJuvenileBooks} from "services";
+import { getHorrorBooks } from "services";
 import { BookCard } from "components/BookCard";
 import { Stack } from "@mui/material";
 
